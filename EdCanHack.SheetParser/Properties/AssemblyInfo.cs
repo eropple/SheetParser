@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EdCanHack.SheetParser")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("SheetParser is a simple deserialization system for transforming tabular data into .NET objects, originally used to store lists of items, monsters, etc. in game asset directories. It supports both attribute-driven and procedural transformation of table rows into objects, with the ability to define custom transforms for your own scalar data types.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ed Ropple (ed+sheetparser@edropple.com)")]
 [assembly: AssemblyProduct("EdCanHack.SheetParser")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © 2014 Ed Ropple")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]

@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="INamedSheetReader.cs" />
     <Compile Include="ISheetReader.cs" />
     <Compile Include="Transforms\IKeyed.cs" />
@@ -49,6 +46,9 @@
     <Compile Include="SheetParserException.cs" />
     <Compile Include="SpreadsheetML\SpreadsheetMLReader.cs" />
     <Compile Include="SpreadsheetML\SpreadsheetMLSheet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EdCanHack.SheetParser.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
