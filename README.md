@@ -8,6 +8,13 @@ SheetParser is largely LINQ-based and lazily evaluated. It is provided as a Port
 
 - **Excel 2003 XML** (SpreadsheetML)
 
+## Installation ##
+SheetParser <a href="https://www.nuget.org/packages/EdCanHack.SheetParser/1.0.0" target="_blank">is on NuGet</a>. To install, run the following command in the Package Manager Console:
+
+```
+PM> Install-Package EdCanHack.SheetParser
+```
+
 ## Usage ##
 Sample code can be found in _EdCanHack.SheetParser.Tests_ for more advanced usage--iterating and simple deserialization can be found there. Test coverage is not 100%, but the project from which this was extracted has been in use for a couple of years.
 
