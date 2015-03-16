@@ -160,8 +160,8 @@ namespace EdCanHack.SheetParser.Transforms.Serialization
             }
             catch (Exception ex)
             {
-                throw new SheetDeserializationException("Error when deserializing row: {0}",
-                    String.Join(", ", row.Select(s => String.Format("'{0}'", s))));
+                throw new SheetDeserializationException(String.Format("Error when deserializing row: {0}",
+                    String.Join(", ", row.Select(s => String.Format("'{0}'", s)))), ex);
             }
 #endif
         }
