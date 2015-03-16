@@ -11,14 +11,14 @@ namespace EdCanHack.SheetParser.Transforms.Serialization
         public readonly Type DeserializationType;
         public readonly TypeInfo DeserializationTypeInfo;
 
-        private readonly Dictionary<String, PropertyInfo> _propertyMappings;
+        private readonly IReadOnlyDictionary<String, PropertyInfo> _propertyMappings;
 
         private readonly Boolean _ignoreMissingFields;
         private readonly Boolean _ignoreExtraFields;
 
-        private readonly Dictionary<Type, Func<String, Object>> _parsers;
+        private readonly IReadOnlyDictionary<Type, Func<String, Object>> _parsers;
 
-        public SheetDeserializer(IDictionary<Type, Func<String, Object>> extraParsers = null)
+        public SheetDeserializer(IDictionary<Type, Func<String, Object>> extraParsers = null, Boolean useDefaultParsers = true)
         {
             DeserializationType = typeof (TDeserializationType);
             DeserializationTypeInfo = typeof (TDeserializationType).GetTypeInfo();
@@ -31,16 +31,24 @@ namespace EdCanHack.SheetParser.Transforms.Serialization
             _ignoreMissingFields = ShouldIgnoreMissingFields(DeserializationTypeInfo);
             _ignoreExtraFields = ShouldIgnoreExtraFields(DeserializationTypeInfo);
 
-            if (extraParsers == null)
+            var p = new Dictionary<Type, Func<string, object>>();
+            if (extraParsers != null)
             {
-                _parsers = DefaultParsers;
+                foreach (var kvp in extraParsers)
+                    p.Add(kvp.Key, kvp.Value);
             }
-            else
+
+            if (useDefaultParsers)
             {
-                _parsers = new Dictionary<Type, Func<string, object>>(extraParsers);
-                foreach (var kvp in extraParsers.Where(kvp => !_parsers.ContainsKey(kvp.Key)))
-                    _parsers.Add(kvp.Key, kvp.Value);
+                foreach (var kvp in DefaultParsers)
+                {
+                    p.Add(kvp.Key, kvp.Value);
+                }
             }
+
+            
+
+            _parsers = p;
 
             _propertyMappings = BuildMapping();
         }
@@ -208,7 +216,7 @@ namespace EdCanHack.SheetParser.Transforms.Serialization
         }
 
 
-        private static readonly Dictionary<Type, Func<String, Object>> DefaultParsers = new Dictionary
+        public static readonly IReadOnlyDictionary<Type, Func<String, Object>> DefaultParsers = new Dictionary
             <Type, Func<String, Object>>()
         {
             {typeof (Int16), s => Int16.Parse(s)},
