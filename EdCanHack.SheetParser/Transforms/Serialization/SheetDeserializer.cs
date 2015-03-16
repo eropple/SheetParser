@@ -147,7 +147,7 @@ namespace EdCanHack.SheetParser.Transforms.Serialization
                     Int32 column;
                     if (!headerMappings.TryGetValue(propertyName, out column)) continue;
 
-                    String cell = row[column];
+                    String cell = column < row.Count ? row[column] : null;
 
                     if (String.IsNullOrWhiteSpace(cell)) continue;
                     
