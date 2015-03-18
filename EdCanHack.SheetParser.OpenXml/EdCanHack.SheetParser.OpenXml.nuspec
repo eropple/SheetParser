@@ -3,24 +3,22 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <title>EdCanHack.SheetParser (Portable)</title>
+    <title>EdCanHack.SheetParser.OpenXml</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/eropple/SheetParser/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/eropple/SheetParser</projectUrl>
     <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <summary>A tabular data serializer for .NET.</summary>
+    <summary>An OpenXML (Excel 2007+) adapter for EdCanHack.SheetParser.</summary>
     <description>$description$</description>
     <releaseNotes>
-1.1.3: Minor bug fixes, synced version with EdCanHack.SheetParser.OpenXml.
-1.1.1, 1.1.2: Minor bug fixes.
-1.1.0: API-compatible change to better handle default parsers.
-1.0.0: Initial release.
+      1.1.3: Initial release (version synced to parent project).
     </releaseNotes>
     <copyright>Copyright 2015 Ed Ropple</copyright>
-    <tags>excel serialization pcl portable</tags>
+    <tags>excel serialization openxml</tags>
     <dependencies>
+      <dependency id="EdCanHack.SheetParser" version="(1.1.29999, 1.2.0)" />
     </dependencies>
   </metadata>
 </package>

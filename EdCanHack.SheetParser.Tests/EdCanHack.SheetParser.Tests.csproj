@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="OpenXMLTest.cs" />
     <Compile Include="SheetDeserializerTest.cs" />
     <Compile Include="SheetTransformerTest.cs" />
     <Compile Include="SpreadsheetMLTest.cs" />
@@ -63,10 +64,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EdCanHack.SheetParser.OpenXml\EdCanHack.SheetParser.OpenXml.csproj">
+      <Project>{50D8279B-3BC6-4136-92A1-0A128E218EA8}</Project>
+      <Name>EdCanHack.SheetParser.OpenXml</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EdCanHack.SheetParser\EdCanHack.SheetParser.csproj">
       <Project>{85B3D170-B1D7-4FAD-8A3E-5A11486E1B49}</Project>
       <Name>EdCanHack.SheetParser</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OpenXMLTestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

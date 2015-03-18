@@ -10,7 +10,6 @@ namespace EdCanHack.SheetParser.SpreadsheetML
     public class SpreadsheetMLSheet : Sheet
     {
         private readonly XElement _sheetRoot;
-        public readonly Boolean HasHeaderRow;
 
         internal SpreadsheetMLSheet(XElement sheetRoot, bool hasHeaderRow) : base(hasHeaderRow)
         {
@@ -20,7 +19,6 @@ namespace EdCanHack.SheetParser.SpreadsheetML
         protected override IEnumerable<IList<String>> EnumerateRowsImpl()
         {
             var table = _sheetRoot.Element(SpreadsheetMLReader.SSNamespace + "Table");
-
 
             foreach (var row in table.Elements(SpreadsheetMLReader.SSNamespace + "Row"))
             {
