@@ -13,12 +13,13 @@
     <summary>An OpenXML (Excel 2007+) adapter for EdCanHack.SheetParser.</summary>
     <description>$description$</description>
     <releaseNotes>
-      1.1.3: Initial release (version synced to parent project).
+1.1.4: Packaging error.
+1.1.3: Initial release (version synced to parent project).
     </releaseNotes>
     <copyright>Copyright 2015 Ed Ropple</copyright>
     <tags>excel serialization openxml</tags>
     <dependencies>
-      <dependency id="EdCanHack.SheetParser" version="(1.1.29999, 1.2.0)" />
+      <dependency id="EdCanHack.SheetParser" version="[1.1.3, 1.2.0)" />
     </dependencies>
   </metadata>
 </package>
